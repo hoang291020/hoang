@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1556097062 source:c:\users\hello\desktop\game\game_project\gameplay.cpp
+	<iostream>
+	<SDL.h>
+	"rule.h"
+	<SDL_ttf.h>
+
+1556096905 c:\users\hello\desktop\game\game_project\rule.h
+	<iostream>
+	<SDL.h>
+
+1556097003 source:c:\users\hello\desktop\game\game_project\rendergame.cpp
+	<iostream>
+	<SDL.h>
+	"rule.h"
+	<SDL_ttf.h>
+	<SDL_image.h>
+
+1556096906 source:c:\users\hello\desktop\game\game_project\rule.cpp
+	<iostream>
+	<SDL.h>
+	"rule.h"
+	<SDL_ttf.h>
+
