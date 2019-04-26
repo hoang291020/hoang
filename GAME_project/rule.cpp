@@ -89,7 +89,7 @@ void mybegin(SDL_Renderer* renderer,SDL_Event event)
 		cout << "Font loading error" << endl;
 		return;
 	}
-	SDL_Surface* mybegin1 = TTF_RenderText_Solid(font, "  xxxxxxxxxxxxxxx   ", Black);
+	SDL_Surface* mybegin1 = TTF_RenderText_Solid(font, "    MAZE CONQUEST   ", Black);
     SDL_Surface* mybegin2 = TTF_RenderText_Solid(font, "press enter to start", Red);
 	SDL_Texture* beginMessage = SDL_CreateTextureFromSurface(renderer, mybegin1);
     SDL_Texture* beginMessage2 = SDL_CreateTextureFromSurface(renderer, mybegin2);
