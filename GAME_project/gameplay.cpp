@@ -7,9 +7,9 @@ bool eat(int x, int y, int xf, int yf){
 
    if((x == xf && y == yf)||
      ((x <= xf && x + 20 >= xf)&& (y + 20 >= yf)&&(yf >= y))||
-     ((x >= xf && x <= xf + 10)&& (y + 20 >= yf)&&(yf >= y))||
-     ((x <= xf && x + 20 >= xf)&& (y <= yf + 10)&&(yf <= y))||
-     ((x >= xf && x <= xf + 10)&& (y <= yf + 10)&&(yf <= y))){
+     ((x >= xf && x <= xf + 20)&& (y + 20 >= yf)&&(yf >= y))||
+     ((x <= xf && x + 20 >= xf)&& (y <= yf + 20)&&(yf <= y))||
+     ((x >= xf && x <= xf + 20)&& (y <= yf + 20)&&(yf <= y))){
 
         return true;
     }

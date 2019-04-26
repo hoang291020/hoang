@@ -9,7 +9,7 @@ SDL_Renderer* renderer = NULL;
 
 const int SCREEN_WIDTH = 600;
 const int SCREEN_HEIGHT = 600;
-const char WINDOW_TITLE[] = "MYGAME";
+const char WINDOW_TITLE[] = "MAZE CONQUEST";
 void logSDLError(std::ostream& os,
                  const std::string &msg, bool fatal);
 

@@ -9,11 +9,19 @@ void rendergame(SDL_Window* window, SDL_Renderer* renderer, const SDL_Rect fille
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
 
-    SDL_SetRenderDrawColor(renderer, 255, 0, 255, 255);
-    SDL_RenderFillRect(renderer, &filled_rect1);
+    SDL_Surface* loadtex = IMG_Load("blue.jpg");
+    SDL_Texture* myload = SDL_CreateTextureFromSurface(renderer, loadtex);
+    SDL_RenderCopy(renderer,myload,NULL,&filled_rect1);
 
-    SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255);
-    SDL_RenderFillRect(renderer, &filled_rect2);
+    SDL_Surface* loadtex2 = IMG_Load("red.jpg");
+    SDL_Surface* loadtex3 = IMG_Load("cherry.jpg");
+    SDL_Texture* myload2 = SDL_CreateTextureFromSurface(renderer, loadtex2);
+    SDL_Texture* myload3 = SDL_CreateTextureFromSurface(renderer, loadtex3);
+    SDL_RenderCopy(renderer,myload3,NULL,&filled_rect2);
+    SDL_RenderCopy(renderer,myload2,NULL,&filled_rect3);
+    SDL_RenderCopy(renderer,myload2,NULL,&filled_rect4);
+    SDL_RenderCopy(renderer,myload2,NULL,&filled_rect5);
+
 
     SDL_SetRenderDrawColor(renderer, 225, 0, 0, 255);
     SDL_Rect mill;
@@ -76,16 +84,6 @@ void rendergame(SDL_Window* window, SDL_Renderer* renderer, const SDL_Rect fille
         filled_rect5.y = 370 - ((time/100)%17)*9;
     }
 
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    SDL_RenderFillRect(renderer,& filled_rect3);
-
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    SDL_RenderFillRect(renderer,& filled_rect4);
-
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    SDL_RenderFillRect(renderer,& filled_rect5);
-
-    SDL_SetRenderDrawColor(renderer, 220, 0, 0, 255);
     SDL_SetRenderDrawColor(renderer, 220, 0, 0, 255);
 
     SDL_RenderDrawLine(renderer,30,30,30,80);
@@ -207,6 +205,12 @@ void rendergame(SDL_Window* window, SDL_Renderer* renderer, const SDL_Rect fille
 	SDL_RenderCopy(renderer, timepointMessage, NULL, &timepointRect);
 
     SDL_RenderPresent(renderer);
+    SDL_FreeSurface(loadtex);
+    SDL_FreeSurface(loadtex2);
+    SDL_FreeSurface(loadtex3);
+    SDL_DestroyTexture(myload);
+    SDL_DestroyTexture(myload2);
+    SDL_DestroyTexture(myload3);
     TTF_CloseFont(font);
     SDL_DestroyTexture(timeMessage);
 

@@ -20,16 +20,16 @@ int main(int argc, char* argv[])
     mybegin(renderer,e);
     int start = SDL_GetTicks();
     SDL_Rect filled_rect;
-    filled_rect.x = 0;
-    filled_rect.y = 0;
+    filled_rect.x = 120;
+    filled_rect.y = 130;
     filled_rect.w = 20;
     filled_rect.h = 20;
 
     SDL_Rect food;
     food.x = rand() % 390 + 0;
     food.y = rand() % 390 + 0;
-    food.w = 10;
-    food.h = 10;
+    food.w = 20;
+    food.h = 20;
 
     SDL_Rect enemy;
     enemy.y = 330;

@@ -1,0 +1,43 @@
+SDL_Surface* loadwhite = IMG_Load("pac1.jpg");
+    SDL_Surface* loadtex = IMG_Load("pac2.jpg");
+
+
+
+
+    if( loadtex == NULL )
+    {
+        printf( "Unable to load image %s! SDL_image Error", IMG_GetError() );
+    }
+    SDL_Texture* myload = SDL_CreateTextureFromSurface(renderer, loadtex);
+    SDL_Texture* myloadw = SDL_CreateTextureFromSurface(renderer, loadwhite);
+    if((time/1000) % 2 == 0){
+    SDL_RenderCopy(renderer,myload,NULL,&filled_rect1);
+    } else {
+    SDL_RenderCopy(renderer,myloadw,NULL,&filled_rect1);
+    }
+
+
+
+
+
+     SDL_Surface* loadtex2 = IMG_Load("redgh.jpg");
+    SDL_Surface* loadtex3 = IMG_Load("cherry.jpg");
+    if( loadtex2 == NULL )
+    {
+        printf( "Unable to load image %s! SDL_image Error", IMG_GetError() );
+    }
+    SDL_Texture* myload2 = SDL_CreateTextureFromSurface(renderer, loadtex2);
+    SDL_Texture* myload3 = SDL_CreateTextureFromSurface(renderer, loadtex3);
+    SDL_RenderCopy(renderer,myload2,NULL,&filled_rect3);
+    SDL_RenderCopy(renderer,myload2,NULL,&filled_rect4);
+    SDL_RenderCopy(renderer,myload2,NULL,&filled_rect5);
+    SDL_RenderCopy(renderer,myload3,NULL,&filled_rect2);
+
+    SDL_FreeSurface(loadtex);
+    SDL_FreeSurface(loadtex2);
+    SDL_FreeSurface(loadtex3);
+    SDL_FreeSurface(loadwhite);
+    SDL_DestroyTexture(myload);
+    SDL_DestroyTexture(myload2);
+    SDL_DestroyTexture(myload3);
+    SDL_DestroyTexture(myloadw);
